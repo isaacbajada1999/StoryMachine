@@ -1,4 +1,4 @@
-﻿namespace StoryMachine
+﻿namespace StoryMachine.UserInterface
 {
     partial class Form1
     {

@@ -45,10 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="DatabaseModels\ChosenOption.cs" />
+    <Compile Include="DatabaseModels\Options.cs" />
+    <Compile Include="DatabaseModels\Passage.cs" />
+    <Compile Include="DatabaseModels\PlayerDetails.cs" />
+    <Compile Include="DatabaseModels\State.cs" />
+    <Compile Include="DatabaseModels\Story.cs" />
+    <Compile Include="UserInterface\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
+    <Compile Include="UserInterface\Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -74,6 +80,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BusinessLogic\" />
+    <Folder Include="Repositories\" />
+    <Folder Include="Utilities\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

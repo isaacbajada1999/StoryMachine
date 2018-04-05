@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StoryMachine
+namespace StoryMachine.UserInterface
 {
     public partial class Form1 : Form
     {
