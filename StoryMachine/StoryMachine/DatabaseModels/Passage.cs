@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StoryMachine.DatabaseModels
 {
-    class Passage
+    public class Passage
     {
         public int Id { get; set; }
         public int StoryId { get; set; }

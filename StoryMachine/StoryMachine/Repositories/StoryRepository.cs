@@ -9,6 +9,12 @@ namespace StoryMachine.Repositories
 {
     class StoryRepository
     {
+        List<Story> stories = new List<Story>
+        {
+            new Story() {Name = "Baywatch", Id = 0},
+            new Story() {Name = "Sherlock", Id = 1}
+        };
+
         public bool AddStory(Story story)
         {
             return true;
@@ -26,12 +32,17 @@ namespace StoryMachine.Repositories
 
         public Story GetStoryById(int id)
         {
-            return null;
+            return stories.Where(story => story.Id == id).FirstOrDefault();
+        }
+
+        public Story GetStoryByName(string name)
+        {
+            return stories.Where(story => story.Name == name).FirstOrDefault();
         }
 
         public List<Story> GetAllStories()
         {
-            return null;
+            return stories;
         }
 
 

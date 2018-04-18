@@ -51,20 +51,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\ApplicationState.cs" />
+    <Compile Include="BusinessLogic\PlayerHandler.cs" />
+    <Compile Include="BusinessLogic\StateHandler.cs" />
+    <Compile Include="BusinessLogic\StoryHandler.cs" />
     <Compile Include="DatabaseModels\ChosenOption.cs" />
-    <Compile Include="DatabaseModels\Options.cs" />
+    <Compile Include="DatabaseModels\Option.cs" />
     <Compile Include="DatabaseModels\Passage.cs" />
     <Compile Include="DatabaseModels\PlayerDetails.cs" />
     <Compile Include="DatabaseModels\State.cs" />
     <Compile Include="DatabaseModels\Story.cs" />
-    <Compile Include="UserInterface\Form1.cs">
+    <Compile Include="LogicalModels\OnScreenItem.cs" />
+    <Compile Include="Repositories\ChosenOptionRepository.cs" />
+    <Compile Include="Repositories\OptionRepository.cs" />
+    <Compile Include="Repositories\PassageRepository.cs" />
+    <Compile Include="Repositories\PlayerDetailsRepository.cs" />
+    <Compile Include="Repositories\StateRepository.cs" />
+    <Compile Include="Repositories\StoryRepository.cs" />
+    <Compile Include="UserInterface\StoryScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserInterface\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="UserInterface\WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInterface\LoginScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\LoginScreen.Designer.cs">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\StoryChoiceScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\StoryChoiceScreen.Designer.cs">
+      <DependentUpon>StoryChoiceScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\NameRegisterform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\NameRegisterform.Designer.cs">
+      <DependentUpon>NameRegisterform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterface\SaveGame.cs" />
+    <Compile Include="UserInterface\StoryFormStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInterface\StoryFormStart.Designer.cs">
+      <DependentUpon>StoryFormStart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\DatabaseHelper.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +114,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserInterface\WelcomeScreen.resx">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\LoginScreen.resx">
+      <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\StoryChoiceScreen.resx">
+      <DependentUpon>StoryChoiceScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\NameRegisterform.resx">
+      <DependentUpon>NameRegisterform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterface\StoryFormStart.resx">
+      <DependentUpon>StoryFormStart.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -88,10 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogic\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

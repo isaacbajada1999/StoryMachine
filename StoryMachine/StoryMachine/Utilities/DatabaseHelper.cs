@@ -28,7 +28,7 @@ namespace StoryMachine.Utilities
 
             return count;
         }
-
+        
         public void CloseConnection()
         {
             conn.Close();
