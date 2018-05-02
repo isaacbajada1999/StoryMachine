@@ -8,10 +8,10 @@ namespace StoryMachine.DatabaseModels
 {
     public class State
     {
-        public int Id { get; set; }
-        public int PlayerId { get; set; }
-        public int StoryId { get; set; }
-        public int PassageId { get; set; }
+        public int id { get; set; }
+        public int playerid { get; set; }
+        public int storyid { get; set; }
+        public int passageid { get; set; }
 
     }
 }

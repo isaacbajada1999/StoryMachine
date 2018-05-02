@@ -4,17 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StoryMachine.DatabaseModels;
+using StoryMachine.Utilities;
 
 namespace StoryMachine.Repositories
 {
     class OptionRepository
     {
-        List<Option> options = new List<Option>
-        {
-            new Option { Id = 0, RequiredOptionId = -1, PassageId = 0, DestPassageId = 1, Text = "Go To Shore"},
-            new Option { Id = 1, RequiredOptionId = -1, PassageId = 0, DestPassageId = 2, Text = "Go To Pavement"}
-        };
-
         public bool AddOption(Option Option)
         {
             return true;
@@ -30,9 +25,31 @@ namespace StoryMachine.Repositories
             return true;
         }
 
-        internal List<Option> GetOptionByPassageId(int id)
+        internal List<Option> GetOptionByPassageId(int passageId)
         {
-            return options.Where(option => option.PassageId == id).ToList();
+            List<Dictionary<string, string>> optionsFromDb = DatabaseHelper.Current.SelectColumns("SELECT * FROM options WHERE passage_id = " + passageId + ";");
+
+            if (optionsFromDb == null)
+            {
+                return null;
+            }
+
+            List<Option> options = new List<Option>();
+
+            foreach (Dictionary<string, string> optionFromDb in optionsFromDb)
+            {
+                options.Add(new Option
+                {
+                    Id = int.Parse(optionFromDb["id"]),
+                    PassageId = int.Parse(optionFromDb["passage_id"]),
+                    RequiredOptionId = int.Parse(optionFromDb["requiredoption_id"]),
+                    DestPassageId = int.Parse(optionFromDb["destpassage_id"]),
+                    OptionText = optionFromDb["text"]
+                }
+                );
+            }
+
+            return options;
         }
 
         public Option GetOptionById(int id)

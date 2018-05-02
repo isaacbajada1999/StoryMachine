@@ -68,6 +68,8 @@
     <Compile Include="Repositories\PlayerDetailsRepository.cs" />
     <Compile Include="Repositories\StateRepository.cs" />
     <Compile Include="Repositories\StoryRepository.cs" />
+    <Compile Include="UserInterface\id.cs" />
+    <Compile Include="UserInterface\option1.cs" />
     <Compile Include="UserInterface\StoryScreen.cs">
       <SubType>Form</SubType>
     </Compile>

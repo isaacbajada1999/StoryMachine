@@ -10,7 +10,7 @@ namespace StoryMachine.DatabaseModels
     {
         public int Id { get; set; }
         public int PassageId { get; set; }
-        public string Text { get; set; }
+        public string OptionText { get; set; }
         public int RequiredOptionId { get; set; }
         public int DestPassageId { get; set; }
     }

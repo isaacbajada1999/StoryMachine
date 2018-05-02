@@ -4,18 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using StoryMachine.DatabaseModels;
+using StoryMachine.Utilities;
 
 namespace StoryMachine.Repositories
 {
     class PassageRepository
     {
-        List<Passage> passages = new List<Passage>
-        {
-            new Passage { Id = 0, StoryId = 0, Title = "At the beach", Description = "You are on the beach. What do you do?" },
-            new Passage { Id = 1, StoryId = 0, Title = "At the shore line", Description = "You are on the shore line. What do you do?" },
-            new Passage { Id = 2, StoryId = 0, Title = "On the pavement", Description = "You exited the beach and are now on the pavement. End of story." }
-        };
-
         public bool AddPassage(Passage Passage)
         {
             return true;
@@ -38,6 +32,27 @@ namespace StoryMachine.Repositories
 
         public List<Passage> GetAllPassages()
         {
+            List<Dictionary<string, string>> passagesFromDb = DatabaseHelper.Current.SelectColumns("SELECT id, story_id, title, passagetext FROM passage;");
+
+            if (passagesFromDb == null)
+            {
+                return null;
+            }
+
+            List<Passage> passages = new List<Passage>();
+
+            foreach (Dictionary<string, string> passageFromDb in passagesFromDb)
+            {
+                passages.Add(new Passage
+                    {
+                        Id = int.Parse(passageFromDb["id"]),
+                        StoryId = int.Parse(passageFromDb["story_id"]),
+                        Title = passageFromDb["title"],
+                        Description = passageFromDb["passagetext"]
+                    }
+                );
+            }
+
             return passages;
         }
 
