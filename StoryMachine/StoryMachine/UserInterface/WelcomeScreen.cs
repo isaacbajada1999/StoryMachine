@@ -21,7 +21,7 @@ namespace StoryMachine.UserInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EnterName EN = new EnterName(); 
+            EnterName EN = new EnterName();
             EN.ShowDialog();
 
         }
@@ -30,8 +30,13 @@ namespace StoryMachine.UserInterface
         {
             LoadStory1 NRF = new LoadStory1();
             NRF.ShowDialog();
-           
 
+
+        }
+
+        private void WelcomeScreen_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

@@ -34,5 +34,10 @@ namespace StoryMachine.UserInterface
                 LS.ShowDialog();
             }
         }
+
+        private void LoadStory1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

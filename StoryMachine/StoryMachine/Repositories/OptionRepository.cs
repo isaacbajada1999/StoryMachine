@@ -25,9 +25,15 @@ namespace StoryMachine.Repositories
             return true;
         }
 
+
+
         internal List<Option> GetOptionByPassageId(int passageId)
         {
             List<Dictionary<string, string>> optionsFromDb = DatabaseHelper.Current.SelectColumns("SELECT * FROM options WHERE passage_id = " + passageId + ";");
+            DatabaseHelper.Current.SelectColumns("SELECT text FROM options WHERE passage_id = 2");
+
+
+
 
             if (optionsFromDb == null)
             {

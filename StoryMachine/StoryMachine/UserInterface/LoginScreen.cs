@@ -19,18 +19,12 @@ namespace StoryMachine.UserInterface
         {
             InitializeComponent();
         }
-
         private void EnterName_Load(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(NameText.Text))
             {
-
-
-
             }
         }
-
-
         private void Login_Button_Click(object sender, EventArgs e)
         {
             string name = NameText.Text;
@@ -44,7 +38,7 @@ namespace StoryMachine.UserInterface
                 MessageBox.Show("Welcome back" + " " + name);
                 LoadStorys LS = new LoadStorys();
                 LS.ShowDialog();
-            }
+         }
         }
 
        

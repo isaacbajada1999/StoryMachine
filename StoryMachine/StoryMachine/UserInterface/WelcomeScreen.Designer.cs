@@ -56,11 +56,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.DodgerBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.LoginButton);
             this.Name = "WelcomeScreen";
-            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.WelcomeScreen_Load);
             this.ResumeLayout(false);
 
         }
